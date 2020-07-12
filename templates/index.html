@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sales trend Predictor</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+
+<body>
+
+    <!-- Website Title -->
+    <div class="container-bg container">
+        <h2 class='container-heading'><span class="heading_font">Prediction: Future sales trend</span></h2>
+        <div class='description'>
+            <p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+        </div>
+    </div>
+
+    <!-- Text Area -->
+    <div class="container padding-zero ">
+        <div class="row">
+            <label class="label">
+                Given, that dataset contains monthly sales from 2011-2019. Problem statemnt is to predict the sales trend in 2020.
+                Data of 2011 from the dataset is as below
+            </label> 
+            <div class="col-md-5">
+                <img class="sample" src="\static\images\sample.png" alt="User Image" />
+
+                <form class="form-horizontal form-sales" action="{{ url_for('predict') }}" method="POST">
+                    <div class="form-group">
+                        <label class="control-label form-label" for="email">Enter No. of months to predict the sales trend</label>
+                        <div >
+                            <input autocomplete="off" min="1" max="12" class="form-control" type="text" name="months"
+                                placeholder="Month (1-12)"><br>
+    
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                       <input type="submit" class="btn btn-primary" value="Predict">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <img class="image" src="{{ linePlotPath }}" alt="User Image" />
+            </div>
+        </div>
+        <div class="row">
+            
+        </div>
+    </div>
+</body>
+
+</html>

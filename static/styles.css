@@ -1,0 +1,175 @@
+html{
+	height: 100%;
+	margin: 0;
+}
+
+body{
+	font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Website Title */
+.container-bg {
+    padding: 30px;
+	position: relative;
+	background:  #54b948;
+	background-size: 500% 500%;
+}
+
+.container-heading{
+    margin: 0;
+}
+.col-sm-10 {
+	height: 29px;
+}
+.padding-zero {
+	padding: 0px;
+	border: 1px solid;
+	padding-top: 15px;
+}
+
+.heading_font{
+    color: #ffffff;
+	font-family: 'Open-Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif';
+	font-size: 35px;
+	font-weight: normal;
+}
+
+.description p{
+	color: #ffffff;
+    font-style: italic;
+    font-size: 14px;
+    margin: -5px 0 0;
+}
+
+/* Text Area */
+.ml-container{
+    margin: 30px 0;
+	flex: 1 0 auto;
+}
+
+.form-input {
+	text-align: center;
+	width: 350px;
+	height: 25px;
+	margin-bottom: 5px;
+}
+
+/* Predict Button */
+.my-cta-button{
+	background: #f9f9f9;
+   	border: 2px solid #000000;
+    border-radius: 1000px;
+    box-shadow: 3px 3px #8c8c8c;
+	margin-top: 10px;
+    padding: 10px 36px;
+    color: #000000;
+    display: inline-block;
+   	font: italic bold 20px/1 "Calibri", sans-serif;
+    text-align: center;
+}
+
+.my-cta-button:hover{
+    color: #4d089a;
+    border: 2px solid #4d089a;
+}
+
+.my-cta-button:active{
+    box-shadow: 0 0;
+}
+
+/* Contact */
+.contact-icon{
+	color: #ffffff;
+	padding: 7px;
+}
+
+.contact-icon:hover{
+	color: #8c8c8c;
+}
+
+/* Footer */
+.footer{
+	flex-shrink: 0;
+	position: relative;
+	padding: 20px;
+	background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
+	background-size: 500% 500%;
+	animation: change-gradient 10s ease-in-out infinite;
+}
+
+.footer-description{
+	color: #ffffff;
+	margin: 0;
+	font-size: 12px;
+}
+
+/* Result */
+.results{
+    padding: 30px 0 0;
+	flex: 1 0 auto;
+}
+
+.danger{
+    color: #ff0000;
+}
+
+.safe{
+    color: green;
+}
+
+.image {
+	width: 100%;
+	margin-top: -30px;
+}
+
+.predict-image {
+	width: 100%;
+}
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url('calendar.png') no-repeat;
+    width: 20px;
+	height: 20px;
+	right: 0px;
+	margin-top: 10px;
+    border-width: thin;
+}
+
+.btn-primary {
+	background: #54b948 !important;
+	border-color: #cdcdcd !important;
+	width: 150px;
+}
+
+.sample {
+	height: 50%;
+	margin-top: 25px;
+}
+.label {
+	font-style: oblique !important;
+	font-size: 14px !important;
+	padding-left: 15px;
+	width: 70%;
+}
+.form-label {
+	font-weight: 600;
+	color: #333;
+}
+
+.form-sales {
+	margin-top: 35px;
+}
