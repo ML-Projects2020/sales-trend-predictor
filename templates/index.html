@@ -29,10 +29,12 @@
         <div class="row">
             <label class="label">
                 Given, that dataset contains monthly sales from 2011-2019. Problem statemnt is to predict the sales trend in 2020.
-                Data of 2011 from the dataset is as below
-            </label> 
+            </label>
+            <label>
+                Sample Data is as below
+            </label>
             <div class="col-md-5">
-                <img class="sample" src="{{ sample }}" alt="User Image" />
+                <img class="sample" src="{{ samplePath }}" alt="Sample Image" />
 
                 <form class="form-horizontal form-sales" action="{{ url_for('predict') }}" method="POST">
                     <div class="form-group">
