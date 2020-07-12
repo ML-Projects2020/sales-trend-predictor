@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     util.graphForMonths()
-    return render_template('index.html', linePlotPath="\static\images\graph.png")
+    return render_template('index.html', linePlotPath="\static\images\graph.png", sample="\static\images\sample.png")
     
 @app.route('/predict', methods=['POST'])
 def predict():
