@@ -11,7 +11,6 @@ from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima_model import ARIMA
 import statsmodels.api as sm
-import pmdarima as pm
 import os
 import pickle
 from pandas.tseries.offsets import DateOffset
