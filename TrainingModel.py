@@ -14,7 +14,7 @@ import statsmodels.api as sm
 import pmdarima as pm
 import os
 def read_data():
-    df = pd.read_csv(os.path.dirname(__file__)+'monthly-sales-train.csv')
+    df = pd.read_csv(os.path.dirname(__file__)+'/monthly-sales-train.csv')
     return df
 
 def adfuller_test(sales):
@@ -135,7 +135,7 @@ future_datest_df=pd.DataFrame(index=future_dates[0:],columns=df.columns)
 print(future_datest_df)
 
 future_df=pd.concat([df,future_datest_df])
-future_df['forecast'] = fitted.predict(start = 107, end = 121, dynamic= True)
+future_df['forecast'] = fitted.predict(start = 107, end = 121, dynamic= True).round(decimals=0)
 print(future_df.tail(12) )
 
 future_df[['Sales', 'forecast']].plot(figsize=(12, 8))

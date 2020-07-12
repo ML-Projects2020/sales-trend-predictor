@@ -8,6 +8,8 @@ import graphutil as util
 from pandas.tseries.offsets import DateOffset
 import pandas as pd
 import os
+from pathlib import Path
+
 model = pickle.load(open("sarimax-model.pkl", 'rb'))
 
 app = Flask(__name__)
@@ -30,17 +32,24 @@ def predict():
         future_datest_df=pd.DataFrame(index=future_dates[0:],columns=df.columns)
 
         endNumber = 107 + int(months)
-        predictions = model.predict(start = 107, end = endNumber, dynamic= True)
+        predictions = model.predict(start = 107, end = endNumber, dynamic= True).round()
         future_df=pd.concat([df,future_datest_df])
-        future_df['forecast'] = predictions
+
+        future_df['Predicted'] = predictions
         future_datest_df['Sales'] = predictions
         
         future_datest_df.reset_index(level=0, inplace=True)
         future_datest_df.rename(columns={'index':'Month'}, inplace=True)
+        future_datest_df['Month'] = future_datest_df['Month'].dt.strftime('%m /%Y')
+
         file_path = os.path.dirname(__file__)+'/predicted-monthly-sales.csv'
-        future_datest_df.to_csv(file_path)
-        print("file_path", file_path)
-        return render_template('result.html', path=util.graphForPrediction(future_df), path_to_file = file_path)
+        
+        data_folder = Path("static/csv/")
+        file_to_open = data_folder / "predicted-monthly-sales.csv"
+
+        future_datest_df.to_csv(file_to_open)
+        print("file_path", file_to_open)
+        return render_template('result.html', path=util.graphForPrediction(future_df,months), path_to_file = file_to_open)
 
 @app.route('/getCsv') # this is a job for GET, not POST
 def plot_csv():

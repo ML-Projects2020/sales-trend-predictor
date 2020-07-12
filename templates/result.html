@@ -18,7 +18,7 @@
 
         <!-- Website Title -->
 		<div class="container-bg container">
-            <h2 class='container-heading'><span class="heading_font">Prediction: Future sales trend</span></h2>
+            <h2 class='container-heading'><span class="heading_font">Sales trend prediction</span></h2>
             <div class='description'>
     			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
     		</div>
@@ -26,10 +26,9 @@
 
 		<!-- Result -->
 		<div class="container results padding-zero ">
-			<h3> Sales Prediction </h3>
-			<label> Download the predictions file </label>
-			<a href="{{ path_to_file }}" download>
-				Download
+			<label> You can download the predicted results from  </label>
+			<a href="{{ path_to_file }}" download="{{ path_to_file }}">
+				here
  			</a>
 			<img class="predict-image" src="{{ path }}" alt="User Image" />
 		</div>
