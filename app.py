@@ -22,8 +22,10 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        months = str(request.form['months'])
-        
+        months = request.form['months']
+        if not months:
+            print("months", months)
+            return ''
         df = util.read_data()
         df['Month']=pd.to_datetime(df['Month'])
         df.set_index('Month',inplace=True)
