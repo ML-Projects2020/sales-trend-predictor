@@ -11,9 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-</head>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <meta name="google-signin-client_id" content="700145066566-cg07kaj5cipgskcmliu1crhhli5msv9u.apps.googleusercontent.com">
 
+<script>
+   function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}    
+</script>
+</head>
 <body>
 
     <!-- Website Title -->
@@ -22,6 +32,7 @@
         <div class='description'>
             <p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
         </div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
 
     <!-- Text Area -->
